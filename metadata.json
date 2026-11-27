@@ -1,0 +1,6 @@
+{
+  "name": "Economics Made Simple",
+  "description": "An interactive visual economics publication that transforms technical economic reports into clear, everyday explanations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

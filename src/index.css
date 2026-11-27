@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-values-navy: #052c5a;
+  --color-values-navy-deep: #031f42;
+  --color-values-navy-mid: #0a3a72;
+  --color-values-cyan: #00aeef;
+  --color-values-ice: #85c7f2;
+  --color-values-card: #f3f6fb;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    color: #ffffff;
+    background-color: #052c5a;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-display-num {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid #00aeef;
+    outline-offset: 2px;
+  }
+}
+
+/* ========================================================================== */
+/* "VALUES" ROYAL NAVY, SKY CYAN & CRISP WHITE INFOGRAPHIC SURFACES           */
+/* ========================================================================== */
+
+.studio-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(133, 199, 242, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(133, 199, 242, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
+}
+
+.studio-radial-glow {
+  background:
+    radial-gradient(ellipse 70% 55% at 20% 20%, rgba(0, 174, 239, 0.16), transparent 60%),
+    radial-gradient(ellipse 65% 50% at 85% 80%, rgba(133, 199, 242, 0.1), transparent 55%),
+    linear-gradient(165deg, #031f42 0%, #052c5a 50%, #031f42 100%);
+}
+
+.surface-card-light {
+  background-color: #f3f6fb;
+  color: #052c5a;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surface-card-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(3, 31, 66, 0.28);
+}
+
+.surface-card-dark {
+  background-color: #0a3a72;
+  color: #ffffff;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surface-card-dark:hover {
+  background-color: #104687;
+  box-shadow: 0 10px 24px rgba(3, 31, 66, 0.35);
+}
+
+.tile-num-light {
+  background-color: #e6eef8;
+  color: #052c5a;
+}
+
+.tile-num-dark {
+  background-color: #031f42;
+  color: #ffffff;
+}
+
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.animate-flow-dash {
+  animation: flowDash 1.4s linear infinite;
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit-slow {
+  transform-origin: center;
+  animation: spinSlow 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
